@@ -2,7 +2,7 @@
 #include "Auth.h"
 #include <stdio.h>
 #include <time.h>
-#include <windows.h>
+// #include <windows.h>
 using namespace std;
 
 int main(){
