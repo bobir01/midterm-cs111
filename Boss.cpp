@@ -48,6 +48,7 @@ void Boss::set_company(str company_name){
 }
 
 str Boss:: get_company(){
+    company[0]= toupper(company[0]);
     return company;
 }
 
