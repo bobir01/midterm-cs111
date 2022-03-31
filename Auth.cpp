@@ -12,31 +12,22 @@ using namespace std;
 
 string allDrives;
 
-char getRemovableDisk();
-
-int Auth() {
-    char driveLetter = getRemovableDisk();
-    while (1) {
-        driveLetter = getRemovableDisk();
-        if (driveLetter != '0') {
-            printf("%c \n", driveLetter);
-        }
-
-//        Sleep(1000);
-    }
-
-    return 0;
+Auth::Auth() {
+    cout <<" Checking the Authentication 2.0 started!!!"<<"\n";
 }
 
-char getRemovableDisk() {
+
+Auth::~Auth() {}
+
+
+char Auth::getRemovableDisk() {
     char drive = '0';
 
     char szLogicalDrives[MAX_PATH];
     DWORD dwResult = GetLogicalDriveStrings(MAX_PATH, szLogicalDrives);
 
     string currentDrives = "";
-//    cout << dwResult;
-    //cout << dwResult << endl;
+
     for (int i = 0; i < dwResult; i++) {
         if (szLogicalDrives[i] > 64 && szLogicalDrives[i] < 90) {
             currentDrives.append(1, szLogicalDrives[i]);
@@ -50,4 +41,15 @@ char getRemovableDisk() {
     allDrives = currentDrives;
 
     return drive;
+}
+
+bool Auth::authecate() {
+
+        char  driveLetter = getRemovableDisk();
+        //cout << driveLetter<<"\n";
+        //cout << allDrives<<"\n";
+        string str{driveLetter};
+    if (str=="G" || str=="0") return false ;
+    else return true;
+
 }

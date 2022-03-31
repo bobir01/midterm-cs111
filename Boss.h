@@ -7,6 +7,8 @@
 
 
 class Boss {
+public:
+
 
 };
 
