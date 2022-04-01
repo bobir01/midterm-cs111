@@ -13,8 +13,8 @@ typedef std::string str;
 class Boss
 {
 public:
-    Boss(str fname, str lname, str company, str released_day, unsigned int num_employers, str id="");
-    Boss();
+    Boss(str , str , str , str , unsigned int , str );
+
     ~Boss();
     str get_data_of_boss();
     void set_fname(str fname) ;
@@ -27,7 +27,7 @@ public:
     str get_company();
     void set_num_employer(unsigned int num_employers);
     unsigned int get_num_employers();
-    virtual str create_id()=0;
+    virtual str create_id();
     str get_id();
 
 private:

@@ -13,8 +13,7 @@ public:
     Auth();
 
     ~Auth();
-
-   bool authecate();
+    bool authecate();
 
     char getRemovableDisk();
 

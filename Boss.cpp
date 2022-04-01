@@ -8,8 +8,7 @@
 using namespace std;
 
 
-Boss::Boss(str fname="", str lname="", str company="", str released_day="", unsigned int number_employers=0, str id = "")
-{
+Boss::Boss(str fname, str lname, str company, str released_day, unsigned int number_employers, str id = ""){
     this->fname = fname;
     this->lname =lname;
     this-> company = company ;
@@ -19,8 +18,6 @@ Boss::Boss(str fname="", str lname="", str company="", str released_day="", unsi
 
 Boss::~Boss(){}
 
-
-Boss::Boss(){}
 
 
 void Boss::set_fname(str fname){
@@ -68,12 +65,13 @@ unsigned int Boss::get_num_employers(){
     return num_employer;
 }
 
-str Boss::create_id()  {
+str Boss::create_id() {
     srand(time(0));
-    str UUID= to_string(rand());
-    this -> id = get_company()[0] + UUID;
+    int a = rand();
+    str UUID= to_string(a);
+    id =  "AAA"+ UUID;
     return  id;
-     
+
 }
 
 str Boss::get_id(){
@@ -102,7 +100,7 @@ str  Boss::get_data_of_boss(){
     ostringstream ss;
     ss<<"Full name: " << get_lname()<< " "<< get_fname()<<
     "\nCompany: "<< get_company()<<"\nFound at : " <<  get_released_day()<< 
-    "\nNumber of emplyers: "<< get_num_employers()<< " Your Unique id: " << get_id()<<"\n";
+    "\nNumber of emplyers: "<< get_num_employers()<<"\n" << " Your Unique id: " << get_id()<<"\n";
 
     return ss.str();
 
