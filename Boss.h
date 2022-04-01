@@ -14,6 +14,7 @@ class Boss
 {
 public:
     Boss(str fname, str lname, str company, str released_day, unsigned int num_employers, str id="");
+    Boss();
     ~Boss();
     str get_data_of_boss();
     void set_fname(str fname) ;

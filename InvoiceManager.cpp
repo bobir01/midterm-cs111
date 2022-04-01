@@ -3,3 +3,7 @@
 //
 
 #include "InvoiceManager.h"
+
+InvoiceManager::InvoiceManager() : Boss(){
+    Boss::get_data_of_boss();
+}
