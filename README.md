@@ -8,6 +8,7 @@ A simple finance console application written in C++ for mid-term project \
 ## The structures are here
 
 [UML class diagrams](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&layers=1&nav=1#G1-QfYr9P6gZGfqGqSwDJfm7U3nAcmnrUzhttps://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&layers=1&nav=1#G1-QfYr9P6gZGfqGqSwDJfm7U3nAcmnrUz)  
+or look at on [github](./cs111_project.drawio.png "UML class achtechture")
 ---
 >![alt text](https://telegra.ph/file/4cf4364e6e9e6fb5686de.jpg "The structure of Boss.cpp")
 ---
@@ -28,6 +29,18 @@ Then it is done
 
 ```
 Note: You will be promted to enter products as many as you in cycled loop so if you stop adding products to invoice then enter 'q' to quit  
+```  
 
+<div align="center">
+  Thank you for your attention
+</div>
+
+
+Contributors: Jahongir Bahodirov  
+Contributors: Farrukhbek Panjiyev  
+Contributors: Bakhtiyor Rakhmatullyev  
+
+
+>This is open-soruce project feel free to contribute  
 
 
