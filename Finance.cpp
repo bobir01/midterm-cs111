@@ -35,5 +35,5 @@ str  Finance::calc_total() {
 str  Finance::calc_taxes() {
     double total = stod(calc_total());
     double tax = total * 0.15;
-    return ("Governmental tax: " + to_string(tax));
+    return ("Governmental tax 15%: " + to_string(tax));
 }

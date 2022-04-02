@@ -5,6 +5,8 @@
 #include "InvoiceManager.h"
 #include "Auth.h"
 #include <ctype.h>
+#include <chrono>
+#include <ctime>
 
 #include <sstream>
 InvoiceManager::InvoiceManager() : Boss(" ", " ", " " ," ",0, " "){
@@ -15,7 +17,10 @@ InvoiceManager::InvoiceManager() : Boss(" ", " ", " " ," ",0, " "){
 }
 
 void InvoiceManager::set_invoice_date() {
-    invoice_date = to_string(time(0));
+    auto start = std::chrono::system_clock::now();
+    time_t now  =  std::chrono::system_clock::to_time_t(start);
+str time = ctime(&now);
+    invoice_date= time;
 }
 
 void InvoiceManager::create_invoice() {
@@ -119,9 +124,9 @@ void InvoiceManager::send_to_company() {
 
     display();
 
-    cout <<"Press Y to send / N cancel";
+    cout <<"Press Y to send / N cancel \n";
     str conf;
-    getline(cin, conf);
+    cin>>conf;
     if(conf=="Y"){
         cout << "Successfully sent"<<"\n";
     }else{
@@ -138,7 +143,7 @@ str InvoiceManager::get_customer_company() {
 void InvoiceManager::set_customer_company() {
     cout << "Enter your customer company's name: \n";
     str to_company;
-    getline(cin, to_company);
+    cin >> to_company;
     customer=to_company;
 
 }
@@ -148,16 +153,16 @@ void InvoiceManager::set_customer_company() {
     str temp;
     static int i =0;
     while(true) {
-        cout << "Enter your sold product name:  [For exiting /q ]\n";
-        getline(cin, temp);
+        cout << "Enter your sold product name:  [For exiting q ]\n";
+       cin>>temp;
         if(temp=="q"){break;}
         products.push_back(temp);
-        cout << "Enter your sold product quantity/amount :  [For exiting /q ]\n";
-        getline(cin, temp);
+        cout << "Enter your sold product quantity/amount :  [For exiting q ]\n";
+       cin>>temp;
         if(temp=="q"){break;}
         quantity.push_back(stoi(temp));
-        cout << "Enter your sold product price :  [For exiting /q ]\n";
-        getline(cin, temp);
+        cout << "Enter your sold product price :  [For exiting q ]\n";
+       cin>>temp;
         if(temp=="q"){break;}
         price.push_back(stoi(temp));
         total.push_back( quantity[i]* price[i]);
@@ -177,7 +182,7 @@ str InvoiceManager::get_full_invoice(str to_company) {
 }
 
 str InvoiceManager::get_invoice_date() {
-    return to_string(time(0));
+    return invoice_date;
 }
 
 str InvoiceManager::get_invoice_id() {

@@ -6,7 +6,7 @@
 #include <windows.h>
 
 
-Documentary::Documentary() :Finance(){};
+Documentary::Documentary() {};
 
  void  Documentary::deal_invoice() {
 
@@ -19,32 +19,36 @@ Documentary::Documentary() :Finance(){};
             break;
         }
     }
-    Sleep(100);
-     InvoiceManager *managerPtr;
+//    Sleep(100);
+//     InvoiceManager *managerPtr;
     cout << "Enter 1 in order to send invoice to your customers or 2 for see taxes (after invoice):  [for EXIT  q ]\n";
     str temp;
-    InvoiceManager manager;
-    managerPtr=&manager;
+
+//    managerPtr=&manager;
 
 
-
-     getline(cin, temp);
+    cin>>temp;
      if(temp=="1"){
-         InvoiceManager manager;
-         managerPtr=&manager;
+         Documentary::create_invoice();
+         Documentary::send_to_company();
+         cout << "Summa of " <<calc_total()<< " has been transferred to "<< get_customer_company()<< " account!!!"<<"\n";
+        deal_taxes();
 
-         managerPtr->create_invoice();
-         managerPtr->send_to_company();
-     }else{
+
+//    manager.create_invoice();
+//    manager.send_to_company();
+//         managerPtr->create_invoice();
+//         managerPtr->send_to_company();
+     }/*else{
          system("exit");
-     }
+     }*/
 
 }
 
 void Documentary::deal_taxes() {
     str temp;
     cout<<"Enter 1 to see your all taxes or q for exiting "<<"\n";
-    getline(cin, temp);
+   cin>>temp;
     if(temp=="1") {
         cout << calc_taxes() << "\n";
     }else{
